@@ -17,6 +17,12 @@ a {
     text-decoration: none;
 }
 
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
 h1,
 h2,
 h3 {
@@ -30,8 +36,85 @@ img {
 
 header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    border-bottom: 1px solid #2a2d30;
 }
 
 nav ul {
     display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.card {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #14171a;
+    border: 1px solid #2a2d30;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.destaques {
+    padding: 48px 32px;
+}
+
+.destaques h2 {
+    margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 16px;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+
+}
+
+.hero {
+    padding: 48px 32px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: #c9a96e;
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #c9a96e;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+.hero-cta:hover {
+    background-color: #c9a96e;
+    color: #0b0d0f;
 }
