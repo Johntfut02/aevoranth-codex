@@ -112,10 +112,146 @@ header .container {
     font-weight: 700;
 }
 
+.menu-toggle {
+    display: none;
+    position: relative;
+
+    width: 48px;
+    height: 42px;
+    padding: 0;
+
+    background: transparent;
+    border: 1px solid var(--color-gold);
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.menu-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 20px;
+    height: 14px;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.25s ease;
+}
+
+.menu-symbol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.4)
+        rotate(-90deg);
+
+    transition:
+    transform 0.45s ease,
+    opacity 0.3s ease,
+    filter 0.45s ease;    
+}
+
+@keyframes wyrm-appear {
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0.4)
+            rotate(-90deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.25)
+            rotate(8deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+.menu-lines span {
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--color-gold);
+    border-radius: 999px;
+
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.menu-toggle.is-open .menu-lines {
+    transform:
+        translate(-50%, -50%)
+        rotate(90deg)
+        scale(0.5);
+
+    opacity: 0;
+}
+
+.menu-toggle.is-open .menu-lines span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.is-open .menu-lines span:nth-child(2) {
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+.menu-toggle.is-open .menu-lines span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.menu-toggle.is-open .menu-symbol {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1)
+        rotate(0deg);
+
+    filter: drop-shadow(0 0 2px var(--color-gold));
+
+    animation: wyrm-appear 0.55s ease-out;
+}
+
 nav ul {
     display: flex;
     list-style: none;
     gap: 24px;
+}
+
+nav a {
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-gold);
 }
 
 /* HERO */
@@ -131,9 +267,21 @@ nav ul {
     color: var(--color-gold);
 }
 
-.hero p {
+.hero-subtitle {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.hero-description {
     max-width: 600px;
     margin-bottom: 24px;
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.85;
 }
 
 .hero-cta {
@@ -215,15 +363,30 @@ nav ul {
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
+
     header .container {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 16px;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+    nav.menu-open {
+        display: block;
+    }
+
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 16px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
     }
 
     .hero h1 {
