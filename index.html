@@ -30,6 +30,7 @@ FOOTER
     <body>
 
         <header>
+          <div class="container"> 
             <a href="index.html" class="logo">Aevoranth Codex</a>
 
             <nav>
@@ -41,48 +42,53 @@ FOOTER
                     <li><a href="#">Codex</a></li>
                 </ul>      
             </nav>
+          </div>  
         </header>
 
         <main>
             <section class="hero">
-                <h1>Aevoranth Codex</h1>
+                <div class="container">
+                    <h1>Aevoranth Codex</h1>
+                    <!-- Texto introdutório oficial do grimório será inserido aqui -->
+                    <p>Texto de apresentação de Aevoranth.</p>
 
-                <!-- Texto introdutório oficial do grimório será inserido aqui -->
-                <p>Texto de apresentação de Aevoranth.</p>
 
-
-                <a href="#mapa" class="hero-cta">Explorar mapa</a>    
+                    <a href="#mapa" class="hero-cta">Explorar mapa</a>
+                </div>    
             </section>
-            <section id="mapa">
-                 <img src="assets/images/mapa-aevoranth.webp" alt="Mapa do mundo de Aevoranth">
+           <section id="mapa">
+                <img src="assets/images/mapa-aevoranth.webp" alt="Mapa do mundo de Aevoranth">
+
+                <a href="#" class="map-marker caerdovar">Caerdovar</a>
+                <a href="#" class="map-marker cendraria">Cendrária</a>
+                <a href="#" class="map-marker faelurin">Faelurin</a>
+                <a href="#" class="map-marker nharveth">Nharveth</a>
             </section>   
             <section class="destaques">
+              <div class="container">
                 <h2>Destaques do Mundo</h2>
                 <div class="cards">    
-                    <article class="card">
+                    <a href="#" class="card continent-card">
+                        <img src="assets/images/continents/caerdovar.jpeg" alt="">
                         <h3>Caerdovar</h3>
-                        <p>Descrição...</p>
-                        <a href="#">Explorar Caerdovar</a>    
-                    </article>
+                    </a>
 
-                    <article class="card">
+                    <a href="#" class="card continent-card">
+                        <img src="assets/images/continents/cendraria.jpeg" alt="">
                         <h3>Cendrária</h3>
-                        <p>Descrição...</p>
-                        <a href="#">Explorar Cendrária</a>
-                    </article>
+                    </a>
 
-                    <article class="card">
+                    <a href="#" class="card continent-card">
+                        <img src="assets/images/continents/faelurin.jpeg" alt="">
                         <h3>Faelurin</h3>
-                        <p>Descrição...</p>
-                        <a href="#">Explorar Faelurin</a>
-                    </article>
+                    </a>
 
-                    <article class="card">
+                    <a href="#" class="card continent-card">
+                        <img src="assets/images/continents/nharveth.jpeg" alt="">
                         <h3>Nharveth</h3>
-                        <p>Descrição...</p>
-                        <a href="#">Explorar Nharveth</a>
-                    </article>
+                    </a>
                 </div>
+              </div>
             </section>
         </main>
         <footer>
